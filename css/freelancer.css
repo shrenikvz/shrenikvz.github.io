@@ -614,7 +614,7 @@ footer .footer-below {
     grid-column: span 2;
   }
 
-  @media (min-width: 60em) {
+  @media (min-width: 60em) {s
     .item-1 {
       grid-column: 1 / span 2;
     }
