@@ -1,0 +1,375 @@
+/* Scroll Animation Styles */
+
+/* Base animation states */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade in from left */
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade in from right */
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale up animation */
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-in.animated {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger delay for multiple items */
+.animate-on-scroll:nth-child(1) { transition-delay: 0.1s; }
+.animate-on-scroll:nth-child(2) { transition-delay: 0.2s; }
+.animate-on-scroll:nth-child(3) { transition-delay: 0.3s; }
+.animate-on-scroll:nth-child(4) { transition-delay: 0.4s; }
+.animate-on-scroll:nth-child(5) { transition-delay: 0.5s; }
+.animate-on-scroll:nth-child(6) { transition-delay: 0.6s; }
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced header animations */
+header {
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 73, 94, 0.95) 100%);
+    z-index: 0;
+}
+
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Profile image animation */
+header .img-circle {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+header .img-circle:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Social buttons enhanced animation */
+.btn-social {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-social::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.btn-social:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-social:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section title animations */
+section h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #18bc9c, #2c3e50);
+    transition: width 0.6s ease;
+}
+
+section h2.animated::after {
+    width: 80%;
+}
+
+/* Project/Publication item hover effects */
+.row:has(.project-thumb) {
+    transition: all 0.4s ease;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.row:has(.project-thumb):hover {
+    background: rgba(24, 188, 156, 0.05);
+    transform: translateX(10px);
+    box-shadow: -5px 0 0 #18bc9c;
+}
+
+.row:has(.publication-thumb) {
+    transition: all 0.4s ease;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.row:has(.publication-thumb):hover {
+    background: rgba(44, 62, 80, 0.05);
+    transform: translateX(10px);
+    box-shadow: -5px 0 0 #2c3e50;
+}
+
+/* Image zoom on hover */
+.project-thumb, .publication-thumb, .internship-logo {
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: grayscale(0%);
+}
+
+.project-thumb:hover, .publication-thumb:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+.internship-logo:hover {
+    transform: scale(1.6);
+}
+
+/* Navbar scroll effect enhancement */
+.navbar {
+    transition: all 0.4s ease;
+}
+
+.navbar-shrink {
+    background: rgba(44, 62, 80, 0.98) !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Section transitions */
+section {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(24, 188, 156, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+section:hover::before {
+    opacity: 1;
+}
+
+/* News items animation */
+.about_me ul li {
+    transition: all 0.3s ease;
+    padding-left: 10px;
+    border-left: 3px solid transparent;
+}
+
+.about_me ul li:hover {
+    padding-left: 20px;
+    border-left-color: #18bc9c;
+    background: rgba(24, 188, 156, 0.05);
+}
+
+/* Link hover effects */
+a {
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+section a:not(.btn-social):not(.btn):hover {
+    color: #18bc9c !important;
+    transform: translateX(2px);
+}
+
+/* HR dividers animation */
+hr {
+    opacity: 0.3;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+hr:hover {
+    opacity: 1;
+    transform: scaleX(1.02);
+}
+
+/* Skill tags and buttons */
+.publ li {
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.publ li:hover {
+    background: #2c3e50;
+    border-color: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.publ li:hover a {
+    color: white !important;
+}
+
+/* Success section link styling */
+section.success a {
+    position: relative;
+}
+
+section.success a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2c3e50;
+    transition: width 0.3s ease;
+}
+
+section.success a:hover::after {
+    width: 100%;
+}
+
+/* Contact section social icons */
+.social-dark-bg {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-dark-bg:hover {
+    transform: translateY(-5px) rotate(5deg) scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive animations - reduce on mobile */
+@media (max-width: 768px) {
+    .animate-on-scroll,
+    .fade-in-left,
+    .fade-in-right,
+    .scale-in {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .row:has(.project-thumb):hover,
+    .row:has(.publication-thumb):hover {
+        transform: none;
+    }
+}
+
+/* Subtle pulse animation for important elements */
+@keyframes subtle-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.intro-text .name {
+    background: linear-gradient(45deg, #fff, #18bc9c, #fff, #18bc9c);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 8s ease infinite;
+}
+
+/* Loading state for images */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Smooth opacity transitions */
+.about_me p,
+.pubt,
+.puba,
+.pubv {
+    transition: opacity 0.3s ease;
+}
+
+section:hover .about_me p,
+section:hover .pubt {
+    opacity: 0.95;
+}
+
