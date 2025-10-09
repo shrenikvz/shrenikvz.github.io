@@ -79,7 +79,7 @@ header {
 
 header .container {
     padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 150px;
 }
 
 
@@ -99,7 +99,7 @@ header .intro-text .skills {
 @media(min-width:768px) {
     header .container {
         padding-top: 100px;
-        padding-bottom: 30px;
+        padding-bottom: 150px;
     }
 
     header .intro-text .name {
