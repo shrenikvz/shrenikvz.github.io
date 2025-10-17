@@ -8,9 +8,9 @@
 
     // Configuration
     const ANIMATION_CONFIG = {
-        threshold: 0.15,        // Percentage of element visible before animation
-        rootMargin: '0px 0px -50px 0px',
-        animationDelay: 100     // Delay between staggered animations (ms)
+        threshold: 0.05,        // Percentage of element visible before animation
+        rootMargin: '0px 0px 50px 0px',
+        animationDelay: 50      // Delay between staggered animations (ms)
     };
 
     /**
@@ -45,10 +45,8 @@
     function handleIntersection(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Add animation class with slight delay for smoother effect
-                setTimeout(() => {
-                    entry.target.classList.add('animated');
-                }, 50);
+                // Add animation class immediately for faster response
+                entry.target.classList.add('animated');
                 
                 // Stop observing this element after animation
                 observer.unobserve(entry.target);
@@ -160,7 +158,7 @@
                 
                 if (target.length) {
                     e.preventDefault();
-                    const offset = 70; // Navbar height offset
+                    const offset = 80; // Navbar height offset
                     
                     $('html, body').animate({
                         scrollTop: target.offset().top - offset
