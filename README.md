@@ -1,3 +1,3 @@
-Shrenik Zinage- Personal Website
+Dr. Shrenik Zinage- Personal Website
 
 https://shrenikvz.github.io/
